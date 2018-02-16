@@ -1,4 +1,4 @@
-cn.muread.com
------------------
+https://wordinuse.com
+----------------------
 
-A collection of wechat articles, based Drupal.
+A collection of words in actual use.
