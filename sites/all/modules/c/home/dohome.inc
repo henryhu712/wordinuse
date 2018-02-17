@@ -16,9 +16,7 @@ function home_content() {
 
   $thepath = drupal_get_path("module", "home");
   drupal_add_js($thepath . '/js/home.js');
-/*
-  drupal_add_css($thepath . '/css/news.css');
-*/
+  drupal_add_css($thepath . '/css/home.css');
 
   $the_word = array(
     0 => array('letter' => 't', 'status' => 0),
