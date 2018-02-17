@@ -5,6 +5,9 @@
     attach: function(context, settings) {
 
 
+      var theWord = settings.word_info.the_word;
+      console.log(theWord);
+
 
       // Record hits
     /*

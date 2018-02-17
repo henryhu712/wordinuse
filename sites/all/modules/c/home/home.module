@@ -20,69 +20,8 @@ function home_menu() {
     'file' => 'dohome.inc'
   );
 
-  $rows['more9'] = array(
-    'title' => 'Home More',
-    'page callback' => 'home_more9',
-    'access callback' => TRUE,
-    'type' => MENU_CALLBACK,
-    'file' => 'dohome.inc'
-  );
-
-  $rows['bot2020'] = array(
-    'title' => t('World News'),
-    'page callback' => 'bot2020',
-    'access callback' => TRUE,
-    'type' => MENU_CALLBACK,
-    'file' => 'bot2020.inc'
-  );
-
-  /*
-  $rows['more'] = array(
-    'title' => 'Home More',
-    'page callback' => 'home_more',
-    'access callback' => TRUE,
-    'type' => MENU_CALLBACK,
-    'file' => 'dohome.inc'
-  );
-   */
-
-  $rows['nmore'] = array(
-    'title' => 'Home More',
-    'page callback' => 'home_nmore',
-    'access callback' => TRUE,
-    'type' => MENU_CALLBACK,
-    'file' => 'dohome.inc'
-  );
-
-  /*
-  $rows['news'] = array(
-    'title' => t('News'),
-    'page callback' => 'home_news',
-    'access callback' => TRUE,
-    'type' => MENU_CALLBACK,
-    'file' => 'dohome.inc'
-  );
-   */
-
-  $rows['news'] = array(
-    'title' => t('News'),
-    'page callback' => 'home_n',
-    'access callback' => TRUE,
-    'type' => MENU_CALLBACK,
-    'file' => 'dohome.inc'
-  );
-
   return $rows;
 }
-
-/**
- * Implements template_preprocess_page().
-function home_preprocess_page(&$vars) {
-  if (current_path() == 'home') {
-    $vars['theme_hook_suggestions'][] = 'home_template';
-  }
-}
- */
 
 /**
  * Implements hook_theme().
@@ -92,12 +31,6 @@ function home_theme($existing, $type, $theme, $path) {
   $thePath = drupal_get_path('module', 'home') . '/templates';
 
   return array(
-    /*
-    'template_news' => array(
-      'template' => 'news',
-      'path' => $thePath,
-    ),
-     */
     'template_home' => array(
       'template' => 'home',
       'path' => $thePath,

@@ -14,24 +14,25 @@ function home_content() {
 
   $vars = array();
 
-/*
   $thepath = drupal_get_path("module", "home");
-  drupal_add_js($thepath . '/js/n_more.js');
+  drupal_add_js($thepath . '/js/home.js');
+/*
   drupal_add_css($thepath . '/css/news.css');
-
-  $data = home_get_collection_of_NewsLink_data(0, $language->language);
-
-  drupal_add_js(array('news_args' => array(
-      'lang_code' => $language->language,
-      'lang_prefix' => $language->prefix,
-      'item_array' => $data,
-  )), 'setting');
-
-  $vars = array(
-    'news_array' => $data,
-  );
 */
 
+  $the_word = array(
+    0 => array('letter' => 't', 'status' => 0),
+    1 => array('letter' => 'e', 'status' => 1),
+    2 => array('letter' => 's', 'status' => 0),
+    3 => array('letter' => 't', 'status' => 0),
+  );
+
+  drupal_add_js(array('word_info' => array(
+    'the_word' => $the_word,
+  )), 'setting');
+
+
+  /*
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
         ->entityCondition('bundle', 'ding_yue_hao')
@@ -40,9 +41,8 @@ function home_content() {
         ->count()
         ->addMetaData('account', user_load(1));
   $number = $query->execute();
+   */
 
-
-  $vars['number_ding_yue_hao'] = $number;
 
   return theme('template_home', $vars);
 }
