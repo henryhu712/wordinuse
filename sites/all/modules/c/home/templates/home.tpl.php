@@ -6,8 +6,12 @@
       </div>
 
       <div class="row word-line-wrap">
-        <?php foreach ($letters as $letter): ?>
-          <span> <?php print $letter['status'] == 0 ? '_' : $letter['letter']; ?></span>
+        <?php foreach ($letters as $key => $letter): ?>
+          <?php if ($key == 0): ?>
+          <span class="ix0"> &#9608</span>
+          <? else: ?>
+          <span class="ix<?php print $key; ?>"> <?php print $letter['status'] == 0 ? '_' : $letter['letter']; ?></span>
+          <? endif; ?>
         <?php endforeach; ?>
       </div>
 
