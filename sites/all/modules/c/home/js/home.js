@@ -24,6 +24,9 @@
       $('.keyboard-wrap .letter').on('click', function(e) {
         var letter = $(this).data('letter');
         console.log(letter);
+
+        var text = new SpeechSynthesisUtterance('test');
+        window.speechSynthesis.speak(text);
       })
 
       // Record hits
