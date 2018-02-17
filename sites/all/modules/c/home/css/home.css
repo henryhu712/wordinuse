@@ -4,6 +4,12 @@
 .word-line-wrap {
   font-size: 30px;
 }
+
+
+
+/*
+ * https://codepen.io/ArtemGordinsky/pen/GnLBq
+ */
 .word-line-wrap .ix0 {
   font-weight: 100;
   font-size: 30px;
