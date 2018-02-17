@@ -1,0 +1,6 @@
+name = Home page
+description = All resource of home page.
+package = Obserbot
+core = 7.x
+version = 7.x-1.0
+
