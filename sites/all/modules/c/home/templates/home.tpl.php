@@ -9,9 +9,9 @@
         <?php foreach ($letters as $key => $letter): ?>
           <?php if ($key == 0): ?>
           <span class="ix0"> &#9608</span>
-          <? else: ?>
+          <?php else: ?>
           <span class="ix<?php print $key; ?>"> <?php print $letter['status'] == 0 ? '_' : $letter['letter']; ?></span>
-          <? endif; ?>
+          <?php endif; ?>
         <?php endforeach; ?>
       </div>
 
