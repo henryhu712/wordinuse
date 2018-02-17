@@ -25,8 +25,14 @@ function home_content() {
     3 => array('letter' => 't', 'status' => 0),
   );
 
+  $words = array(
+    array('word' => 'test1', 'pos' => 2),
+    array('word' => 'test2', 'pos' => 3),
+  )
+
   drupal_add_js(array('word_info' => array(
     'the_word' => $the_word,
+    'words' => $words,
   )), 'setting');
 
   $vars['letters'] = $the_word;
