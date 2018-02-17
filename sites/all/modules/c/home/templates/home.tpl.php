@@ -1,8 +1,10 @@
 
         <div class="row items-container text-center">
-          <a href="/c/all">
-            推荐文章数量： <?php print $number_ding_yue_hao; ?>
-          </a>
+            Complete the word： 
+        <?php foreach ($letters as $letter): ?>
+          <span> <?php print $letter['status'] == 0 ? '-' : $letter['letter']; ?></span>
+        <?php endforeach; ?>
+
         </div>
 
 

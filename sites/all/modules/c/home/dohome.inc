@@ -31,6 +31,8 @@ function home_content() {
     'the_word' => $the_word,
   )), 'setting');
 
+  $vars['letters'] = $the_word;
+
 
   /*
   $query = new EntityFieldQuery();
