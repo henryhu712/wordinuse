@@ -19,11 +19,11 @@
 
     <div class="keyboard-wrap">
       <div class="row">
-        <button id="letter-q">Q</button>
-        <button id="letter-w">W</button>
+        <button class="letter" data-letter="q">Q</button>
+        <button class="letter" data-letter="w">W</button>
       </div>
       <div class="row">
-        <button id="letter-a">A</button>
-        <button id="letter-s">S</button>
+        <button class="letter" data-letter="a">A</button>
+        <button class="letter" data-letter="s">S</button>
       </div>
     </div>

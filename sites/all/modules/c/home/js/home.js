@@ -8,6 +8,10 @@
       var theWord = settings.word_info.the_word;
       console.log(theWord);
 
+      $('.keyboard-wrap .letter').on('click', function(e) {
+        var letter = $(this).data('letter');
+        console.log(letter);
+      })
 
       // Record hits
     /*

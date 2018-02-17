@@ -4,7 +4,9 @@
 .word-line-wrap {
   font-size: 30px;
 }
-
+.keyboard-wrap .row {
+  margin-bottom: 20px;
+}
 
 
 /*
