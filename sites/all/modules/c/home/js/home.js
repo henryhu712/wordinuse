@@ -1,24 +1,41 @@
 (function($) {
 
   var words = [];
-  var current_word_index = 0;
+  var current_word_index = 1;
   var current_pos = -1;
+  var wordInfo = {
+    'word': '',
+    'pos': []
+  };
 
   // Display a new word
-  function show_word() {
-    console.log(words);
-    console.log(words[current_word_index]);
+  function init_show_word(theWord) {
+    var ix = 0;
+    var pos = Math.floor((Math.random() * theWord.length));
+    var html = '';
+    var isFirstEmpty = false;
+    for (ix=0; ix<theWord.length; ++ix) {
+      html += '<span class="letter' + (!isFirstEmpty && pos!=ix ? ' blink' : '') + ' data-letter="">';
+      html += pos == ix ? theWord[ix] : '_';
+      html += ' </span>';
+      console.log(ix);
+      if (!isFirstEmpty && pos != ix) {
+        isFirstEmpty = true;
+	current_pos = ix;
+      }
+    }
+
+    $('.word-line-wrap').empty().append(html);
+    console.log(theWord);
+    console.log(pos);
   }
 
   Drupal.behaviors.muread_home = {
     attach: function(context, settings) {
 
-
-      var theWord = settings.word_info.the_word;
-      //console.log(theWord);
       words = settings.word_info.words;
 
-      show_word();
+      init_show_word(words[0]['word']);
 
 
       $('.keyboard-wrap .letter').on('click', function(e) {
