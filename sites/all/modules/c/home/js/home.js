@@ -67,9 +67,18 @@
 
       });
 
+      $(document).keydown(function(ev) {
+        if (ev.which == 8) {
+          var blinking_word = $('.word-line-wrap span').eq(current_pos);
+	  blinking_word.removeClass('blink');
+          current_pos--;
+          var pre_blinking_word = $('.word-line-wrap span').eq(current_pos);
+          pre_blinking_word.addClass('blink').empty().append(' _');
+        }
+      });
+
       $(document).keypress(function(ev) {
         var clickedChar = String.fromCharCode(ev.which);
-        console.log(clickedChar);
         if (clickedChar === ' ') {
           var text = new SpeechSynthesisUtterance(wordInfo.word);
           window.speechSynthesis.speak(text);
