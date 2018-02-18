@@ -66,6 +66,14 @@
           var text = new SpeechSynthesisUtterance(wordInfo.word);
           window.speechSynthesis.speak(text);
         }
+        
+        clickedChar = clickedChar.toUpperCase();
+        if (clickedChar.match(/[A-Z]/)) {
+          var blinking_word = $('.word-line-wrap span').eq(current_pos);
+          blinking_word.empty().append(' ' + clickedChar);
+          current_pos++;
+          $('.word-line-wrap span').eq(current_pos).addClass('blink');
+        }
       });
 
       $('.speak').on('click', function(e) {
