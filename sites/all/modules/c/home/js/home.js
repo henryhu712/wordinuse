@@ -21,7 +21,7 @@
       console.log(ix);
       if (!isFirstEmpty && pos != ix) {
         isFirstEmpty = true;
-	current_pos = ix;
+        current_pos = ix;
       }
     }
 
@@ -40,11 +40,16 @@
 
       $('.keyboard-wrap .letter').on('click', function(e) {
         var letter = $(this).data('letter');
+        var blinking_word = $('.word-line-wrap span').eq(current_pos);
         console.log(letter);
+        console.log(blinking_word);
 
+      });
+
+      $('.speak').on('click', function(e) {
         var text = new SpeechSynthesisUtterance('test');
         window.speechSynthesis.speak(text);
-      })
+      });
 
       // Record hits
     /*
