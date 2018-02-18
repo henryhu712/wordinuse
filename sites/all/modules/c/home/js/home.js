@@ -95,6 +95,11 @@
         }
       });
 
+      $('.next-word').on('click', function(e) {
+          current_word_index++;
+          init_show_word();
+      });
+
       $('.speak').on('click', function(e) {
         var text = new SpeechSynthesisUtterance(wordInfo.word);
         window.speechSynthesis.speak(text);
