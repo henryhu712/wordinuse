@@ -24,6 +24,7 @@ function home_content() {
     2 => array('letter' => 's', 'status' => 0),
     3 => array('letter' => 't', 'status' => 0),
   );
+  $words = get_all_words();
 
   $words = array(
     array('word' => 'abandon', 'tr' => '放弃'),
@@ -46,6 +47,7 @@ function home_content() {
   );
   shuffle($words);
 
+
   drupal_add_js(array('word_info' => array(
     'the_word' => $the_word,
     'words' => $words,
@@ -56,19 +58,40 @@ function home_content() {
   $vars['totle_number'] = count($words);
 
 
-  /*
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node')
-        ->entityCondition('bundle', 'ding_yue_hao')
-        ->propertyCondition('status', NODE_PUBLISHED)
-        ->propertyOrderBy('created', 'DESC')
-        ->count()
-        ->addMetaData('account', user_load(1));
-  $number = $query->execute();
-   */
-
 
   return theme('template_home', $vars);
 }
 
+
+/*
+ * Retrieve all words.
+ */
+function get_all_words() {
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'node')
+        ->entityCondition('bundle', 'word')
+        ->propertyCondition('status', NODE_PUBLISHED)
+        ->addMetaData('account', user_load(1));
+  $result = $query->execute();
+
+  $words = array();
+  if (isset($result['node'])) {
+    $node_nids = array_keys($result['node']);
+    $words_nodes = entity_load('node', $node_nids);
+    foreach ($words_nodes as $word_node) {
+      $words[] = array('word' => $word_node->title, 'tr' => '', 'explanation' => '');
+
+      $quer = new EntityFieldQuery();
+      $quer->entityCondition('entity_type', 'node')
+           ->entityCondition('bundle', 'explanation')
+           ->propertyCondition('status', NODE_PUBLISHED)
+           ->fieldCondition('field_word', 'target_id', $word_node->nid)
+           ->addMetaData('account', user_load(1));
+      $resul = $quer->execute();
+      dpm($resul);
+    }
+    shuffle($words);
+  }
+  return $words;
+}
 
