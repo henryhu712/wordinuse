@@ -59,6 +59,11 @@
 
       });
 
+      $(document).keypress(function(ev) {
+        var clickedChar = String.fromCharCode(ev.which);
+        console.log(clickedChar);
+      });
+
       $('.speak').on('click', function(e) {
         var text = new SpeechSynthesisUtterance(wordInfo.word);
         window.speechSynthesis.speak(text);

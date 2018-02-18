@@ -46,6 +46,6 @@
     </div>
 
     <div class="text-center">
-      <button class="speak" data-letter="s">Speak</button>
+      <button class="speak" data-letter="s">Speak (Space)</button>
     </div>
 
