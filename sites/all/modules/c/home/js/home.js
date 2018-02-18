@@ -62,6 +62,10 @@
       $(document).keypress(function(ev) {
         var clickedChar = String.fromCharCode(ev.which);
         console.log(clickedChar);
+        if (clickedChar === ' ') {
+          var text = new SpeechSynthesisUtterance(wordInfo.word);
+          window.speechSynthesis.speak(text);
+        }
       });
 
       $('.speak').on('click', function(e) {
