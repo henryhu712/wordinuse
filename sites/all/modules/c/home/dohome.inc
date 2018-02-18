@@ -24,7 +24,8 @@ function home_content() {
     2 => array('letter' => 's', 'status' => 0),
     3 => array('letter' => 't', 'status' => 0),
   );
-  $words = get_all_words();
+  $words1 = get_all_words();
+  dpm($words1);
 
   $words = array(
     array('word' => 'abandon', 'tr' => '放弃'),
@@ -79,8 +80,6 @@ function get_all_words() {
     $node_nids = array_keys($result['node']);
     $words_nodes = entity_load('node', $node_nids);
     foreach ($words_nodes as $word_node) {
-      $words[] = array('word' => $word_node->title, 'tr' => '', 'explanation' => '');
-
       $quer = new EntityFieldQuery();
       $quer->entityCondition('entity_type', 'node')
            ->entityCondition('bundle', 'explanation')
@@ -88,7 +87,14 @@ function get_all_words() {
            ->fieldCondition('field_word', 'target_id', $word_node->nid)
            ->addMetaData('account', user_load(1));
       $resul = $quer->execute();
-      dpm($resul);
+      $explanation = '';
+      if (isset($resul['node'])) {
+        $nids = array_keys($resul['node']);
+        $expla = entity_load('node', $nids[0]);
+        $explanation = $expla->body->value->value(array('sanitize' => TRUE));;
+      }
+
+      $words[] = array('word' => $word_node->title, 'tr' => '', 'explanation' => $explanation);
     }
     shuffle($words);
   }
