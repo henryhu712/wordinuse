@@ -48,6 +48,7 @@
         <button class="letter" data-letter="b">B</button>
         <button class="letter" data-letter="n">N</button>
         <button class="letter" data-letter="m">M</button>
+        <button class="delete" data-letter="">Back (Delete)</button>
       </div>
     </div>
 

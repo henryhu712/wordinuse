@@ -42,6 +42,15 @@
     answer.empty().append( wordInfo.word );
   }
 
+  // Back
+  function back_delete() {
+          var blinking_word = $('.word-line-wrap span').eq(current_pos);
+          blinking_word.removeClass('blink');
+          current_pos--;
+          var pre_blinking_word = $('.word-line-wrap span').eq(current_pos);
+          pre_blinking_word.addClass('blink').empty().append(' _');
+  }
+
 
   Drupal.behaviors.muread_home = {
     attach: function(context, settings) {
@@ -69,11 +78,7 @@
 
       $(document).keydown(function(ev) {
         if (ev.which == 8) {
-          var blinking_word = $('.word-line-wrap span').eq(current_pos);
-	  blinking_word.removeClass('blink');
-          current_pos--;
-          var pre_blinking_word = $('.word-line-wrap span').eq(current_pos);
-          pre_blinking_word.addClass('blink').empty().append(' _');
+          back_delete();
         }
       });
 
@@ -103,6 +108,10 @@
           current_word_index++;
           init_show_word();
         }
+      });
+
+      $('.delete').on('click', function(e) {
+        back_delete();
       });
 
       $('.next-word').on('click', function(e) {
