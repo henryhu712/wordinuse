@@ -28,9 +28,10 @@
 
     $('.word-line-wrap').empty().append(html);
 
+  }
 
-    console.log(theWord);
-    console.log(pos);
+  // Check user input
+  function check_input() {
   }
 
   Drupal.behaviors.muread_home = {
@@ -67,12 +68,20 @@
           window.speechSynthesis.speak(text);
         }
         
-        clickedChar = clickedChar.toUpperCase();
-        if (clickedChar.match(/[A-Z]/)) {
+        clickedChar = clickedChar.toLowerCase();
+        if (clickedChar.match(/[a-z]/)) {
           var blinking_word = $('.word-line-wrap span').eq(current_pos);
           blinking_word.empty().append(' ' + clickedChar);
-          current_pos++;
-          $('.word-line-wrap span').eq(current_pos).addClass('blink');
+          blinking_word.removeClass('blink');
+
+          if (current_pos >= wordInfo.word.length - 1) {
+            alert（'end test');
+            check_input();
+          }
+          else {
+            current_pos++;
+            $('.word-line-wrap span').eq(current_pos).addClass('blink');
+          }
         }
       });
 
