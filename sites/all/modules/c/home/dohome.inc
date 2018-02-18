@@ -25,7 +25,7 @@ function home_content() {
     3 => array('letter' => 't', 'status' => 0),
   );
 
-  $words = shuffle(array(
+  $words = array(
     array('word' => 'abandon', 'pos' => 2),
     array('word' => 'abase', 'pos' => 3),
     array('word' => 'abash', 'translation' => ''),
@@ -34,7 +34,8 @@ function home_content() {
     array('word' => 'abdicate', 'translation' => ''),
     array('word' => 'aberration', 'translation' => '失常'),
     //array('word' => '', 'translation' => ''),
-  ));
+  );
+  shuffle($words);
 
   drupal_add_js(array('word_info' => array(
     'the_word' => $the_word,
