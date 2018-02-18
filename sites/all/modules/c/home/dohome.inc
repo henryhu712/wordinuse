@@ -26,13 +26,13 @@ function home_content() {
   );
 
   $words = array(
-    array('word' => 'abandon', 'pos' => 2),
-    array('word' => 'abase', 'pos' => 3),
-    array('word' => 'abash', 'translation' => ''),
-    array('word' => 'abate', 'translation' => ''),
-    array('word' => 'abbreviate', 'translation' => ''),
-    array('word' => 'abdicate', 'translation' => ''),
-    array('word' => 'aberration', 'translation' => '失常'),
+    array('word' => 'abandon', 'tr' => '放弃'),
+    array('word' => 'abase', 'tr' => '降低自己'),
+    array('word' => 'abash', 'tr' => '使愧疚'),
+    array('word' => 'abate', 'tr' => '减少'),
+    array('word' => 'abbreviate', 'tr' => '缩写'),
+    array('word' => 'abdicate', 'tr' => '退位'),
+    array('word' => 'aberration', 'tr' => '失常'),
     //array('word' => '', 'translation' => ''),
   );
   shuffle($words);

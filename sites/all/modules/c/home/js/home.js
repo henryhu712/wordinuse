@@ -5,6 +5,7 @@
   var current_pos = -1;
   var wordInfo = {
     'word': '',
+    'translation': '',
     'pos': []
   };
 
@@ -27,6 +28,7 @@
     }
 
     $('.word-line-wrap').empty().append(html);
+    $('.translation-line-wrap').empty().append(wordInfo.translation);
 
   }
 
@@ -41,6 +43,7 @@
       console.log(words);
 
       wordInfo.word = words[0]['word'];
+      wordInfo.translation = words[0]['tr'];
       init_show_word();
 
 
@@ -75,7 +78,6 @@
           blinking_word.removeClass('blink');
 
           if (current_pos >= wordInfo.word.length - 1) {
-            alert（'end test');
             check_input();
           }
           else {

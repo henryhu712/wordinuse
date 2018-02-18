@@ -8,6 +8,9 @@
       <div class="row word-line-wrap">
       </div>
 
+      <div class="row translation-line-wrap">
+      </div>
+
     </div>
 
     <div class="keyboard-wrap">
