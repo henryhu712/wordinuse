@@ -37,6 +37,7 @@
     attach: function(context, settings) {
 
       words = settings.word_info.words;
+      console.log(words);
 
       wordInfo.word = words[0]['word'];
       init_show_word();
@@ -45,7 +46,7 @@
       $('.keyboard-wrap .letter').on('click', function(e) {
         var clickedLetter = $(this).data('letter');
         var blinking_word = $('.word-line-wrap span').eq(current_pos);
-        blinking_word.empty().append(clickedLetter);
+        blinking_word.empty().append(' ' + clickedLetter);
         blinking_word.removeClass('blink');
 
         if (current_pos < wordInfo.word.length) {
