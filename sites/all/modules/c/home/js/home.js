@@ -39,10 +39,11 @@
 
 
       $('.keyboard-wrap .letter').on('click', function(e) {
-        var letter = $(this).data('letter');
+        var clickedLetter = $(this).data('letter');
         var blinking_word = $('.word-line-wrap span').eq(current_pos);
+        blinking_word.text = clickedLetter;
+        blinking_word.removeClass('blink');
         console.log(letter);
-        console.log(blinking_word);
 
       });
 
