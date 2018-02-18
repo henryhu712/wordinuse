@@ -44,6 +44,8 @@ function home_content() {
 
   $vars['letters'] = $the_word;
 
+  $vars['totle_number'] = count($words);
+
 
   /*
   $query = new EntityFieldQuery();

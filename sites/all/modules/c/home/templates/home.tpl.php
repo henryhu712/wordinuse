@@ -2,7 +2,8 @@
     <div class="items-container text-center">
 
       <div class="row word-line-label">
-            Complete the word below
+            Complete the word below ( 
+        <span class="number-of-word">1</span> / <span><?php print $totle_number; ?></span> )
       </div>
 
       <div class="row word-line-wrap">

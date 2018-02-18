@@ -51,6 +51,13 @@
           pre_blinking_word.addClass('blink').empty().append(' _');
   }
 
+  // Go next
+  function next_word() {
+    current_word_index++;
+    init_show_word();
+    $('.number-of-word').empty().append( current_word_index + 1 );
+  }
+
 
   Drupal.behaviors.muread_home = {
     attach: function(context, settings) {
@@ -105,8 +112,7 @@
         }
 
         if (ev.which == 13) {
-          current_word_index++;
-          init_show_word();
+          next_word();
         }
       });
 
@@ -115,8 +121,7 @@
       });
 
       $('.next-word').on('click', function(e) {
-          current_word_index++;
-          init_show_word();
+        next_word();
       });
 
       $('.speak').on('click', function(e) {
