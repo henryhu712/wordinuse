@@ -59,7 +59,7 @@
       });
 
       $('.speak').on('click', function(e) {
-        var text = new SpeechSynthesisUtterance('test');
+        var text = new SpeechSynthesisUtterance(wordInfo.word);
         window.speechSynthesis.speak(text);
       });
 

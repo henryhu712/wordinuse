@@ -26,8 +26,14 @@ function home_content() {
   );
 
   $words = array(
-    array('word' => 'test1', 'pos' => 2),
-    array('word' => 'test2', 'pos' => 3),
+    array('word' => 'abandon', 'pos' => 2),
+    array('word' => 'abase', 'pos' => 3),
+    array('word' => 'abash', 'translation' => ''),
+    array('word' => 'abate', 'translation' => ''),
+    array('word' => 'abbreviate', 'translation' => ''),
+    array('word' => 'abdicate', 'translation' => ''),
+    array('word' => 'aberration', 'translation' => '失常'),
+    //array('word' => '', 'translation' => ''),
   );
 
   drupal_add_js(array('word_info' => array(
