@@ -32,6 +32,7 @@
 
     $('.word-line-wrap').empty().append(html);
     $('.translation-line-wrap').empty().append(wordInfo.translation);
+    $('.answer-line-wrap').empty();
 
   }
 
