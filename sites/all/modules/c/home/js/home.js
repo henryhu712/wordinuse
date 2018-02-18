@@ -57,12 +57,12 @@
         blinking_word.empty().append(' ' + clickedLetter);
         blinking_word.removeClass('blink');
 
-        if (current_pos < wordInfo.word.length) {
-          current_pos++;
-          $('.word-line-wrap span').eq(current_pos).addClass('blink');
+        if (current_pos >= wordInfo.word.length - 1) {
+            check_input();
         }
         else {
-          alert('end');
+            current_pos++;
+            $('.word-line-wrap span').eq(current_pos).addClass('blink');
         }
 
       });
