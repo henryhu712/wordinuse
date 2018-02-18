@@ -34,7 +34,10 @@
 
   // Check user input
   function check_input() {
+    var answer = $('.answer-line-wrap');
+    answer.empty().append( wordInfo.word );
   }
+
 
   Drupal.behaviors.muread_home = {
     attach: function(context, settings) {
@@ -84,6 +87,10 @@
             current_pos++;
             $('.word-line-wrap span').eq(current_pos).addClass('blink');
           }
+        }
+
+        if (ev.which == 13) {
+          alert('return');
         }
       });
 

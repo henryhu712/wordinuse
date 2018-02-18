@@ -11,6 +11,9 @@
       <div class="row translation-line-wrap">
       </div>
 
+      <div class="row answer-line-wrap">
+      </div>
+
     </div>
 
     <div class="keyboard-wrap">
@@ -49,6 +52,7 @@
     </div>
 
     <div class="text-center">
-      <button class="speak" data-letter="s">Speak (Space)</button>
+      <button class="speak" data-letter="">Speak (Space)</button>
+      <button class="next-word" data-letter="">Next (Return)</button>
     </div>
 
