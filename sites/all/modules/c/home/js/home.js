@@ -41,9 +41,8 @@
       $('.keyboard-wrap .letter').on('click', function(e) {
         var clickedLetter = $(this).data('letter');
         var blinking_word = $('.word-line-wrap span').eq(current_pos);
-        blinking_word.text = clickedLetter;
+        blinking_word.empty().append(clickedLetter);
         blinking_word.removeClass('blink');
-        console.log(letter);
 
       });
 
