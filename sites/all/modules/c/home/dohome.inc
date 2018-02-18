@@ -33,7 +33,16 @@ function home_content() {
     array('word' => 'abbreviate', 'tr' => '缩写'),
     array('word' => 'abdicate', 'tr' => '退位'),
     array('word' => 'aberration', 'tr' => '失常'),
-    //array('word' => '', 'translation' => ''),
+    array('word' => 'aberration', 'tr' => '失常'),
+    array('word' => 'abet', 'tr' => '教唆'),
+    array('word' => 'abject', 'tr' => '卑贱的'),
+    array('word' => 'abjure', 'tr' => '避免'),
+    array('word' => 'ablution', 'tr' => '清洗'),
+    array('word' => 'abnormal', 'tr' => '反常的'),
+    array('word' => 'abominate', 'tr' => '痛恨'),
+    array('word' => 'aboriginal', 'tr' => '土著'),
+    array('word' => 'abridge', 'tr' => '删节'),
+    //array('word' => '', 'tr' => ''),
   );
   shuffle($words);
 
