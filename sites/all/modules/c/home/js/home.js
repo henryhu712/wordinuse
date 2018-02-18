@@ -1,7 +1,7 @@
 (function($) {
 
   var words = [];
-  var current_word_index = 1;
+  var current_word_index = 0;
   var current_pos = -1;
   var wordInfo = {
     'word': '',
@@ -11,6 +11,9 @@
 
   // Display a new word
   function init_show_word() {
+    wordInfo.word = words[current_word_index]['word'];
+    wordInfo.translation = words[current_word_index]['tr'];
+
     var theWord = wordInfo.word;
     var ix = 0;
     var pos = Math.floor((Math.random() * theWord.length));
@@ -43,10 +46,7 @@
     attach: function(context, settings) {
 
       words = settings.word_info.words;
-      console.log(words);
 
-      wordInfo.word = words[0]['word'];
-      wordInfo.translation = words[0]['tr'];
       init_show_word();
 
 
@@ -90,7 +90,8 @@
         }
 
         if (ev.which == 13) {
-          alert('return');
+          current_word_index++;
+          init_show_word();
         }
       });
 
