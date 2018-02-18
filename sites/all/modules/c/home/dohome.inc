@@ -91,7 +91,8 @@ function get_all_words() {
       if (isset($resul['node'])) {
         $nids = array_keys($resul['node']);
         $expla = entity_load('node', $nids[0]);
-        $explanation = $expla->body->value->value(array('sanitize' => TRUE));;
+        $body = field_get_items('node', $expla, 'body');
+        $explanation = $body[0]['value'];
       }
 
       $words[] = array('word' => $word_node->title, 'tr' => '', 'explanation' => $explanation);
